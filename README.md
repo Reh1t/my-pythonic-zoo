@@ -88,6 +88,7 @@ Explore the mental models, characteristic idioms, common surprises, and language
 
 * **[Mental Model](./pythonic_thinking/mental_model/)**: Builds foundations for reasoning about names and objects, mutation and copying, iteration, and functions as first-class objects.
 * **[Type System](./pythonic_thinking/type_system/)**: Explores Python's dynamic type system, type annotations, type relationships, and how static analysis tools reason about Python code.
+* **[Context Managers](./pythonic_thinking/context_managers/)**: Explores Python's `with` statement and context manager protocol for reliable lifecycle, resource, and exception handling.
 
 See the **[Pythonic Thinking Guide](./pythonic_thinking/README.md)** for the full conceptual roadmap and planned exhibits.
 
@@ -172,4 +173,6 @@ Thanks also to members of the wider [Reddit](https://www.reddit.com/) Python com
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _12 September 2026_ | _lizc-au_ |
+| _README.md_ | _13 September 2026_ | _lizc-au_ |
+
+---

@@ -30,9 +30,15 @@ PEP 20 and PEP 8 are not a complete rulebook for Pythonic programming, but they 
 
 Build the foundations for reasoning about Python: names and objects, mutation and copying, iteration, and functions as first-class objects.
 
+### 🔄 [Context Managers](./context_managers/)
+
+Understand Python's `with` statement and context manager protocol, including
+enter and exit handling, managed resources, exception behaviour, and reliable
+lifecycle management.
+
 ### 🌟 Pythonic Idioms
 
-Explore expressive Python features and established idioms such as unpacking, comprehensions, context managers, `enumerate()`, and `zip()` - including when not to use them.
+Explore expressive Python features and established idioms such as unpacking, comprehensions, `enumerate()`, and `zip()` - including when not to use them.
 
 ### ⚠️ Classic Pitfalls
 
@@ -74,7 +80,7 @@ The remaining sections can then be explored according to interest or as particul
 
 **Pythonic Thinking is under active development.**
 
-The **Mental Model** collection is the first completed area, and **Type System** is now also under development. The remaining sections describe planned exhibits and provide a roadmap for future additions.
+The **Mental Model** collection is the first completed area, while **Type System** and **Context Managers** are now under development. The remaining sections describe planned exhibits and provide a roadmap for future additions.
 
 Suggestions, corrections, and contributions from Python programmers of all experience levels are welcome.
 
@@ -82,6 +88,6 @@ Suggestions, corrections, and contributions from Python programmers of all exper
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _pythonic_thinking/README.md_ | _12 September 2026_ | _lizc-au_ |
+| _pythonic_thinking/README.md_ | _13 September 2026_ | _lizc-au_ |
 
 ---
