@@ -61,7 +61,7 @@ if __name__ == "__main__":
     middle = Node("B")
     last = Node("C")
 
-    # Link nodes A - B - C
+    # Link nodes A <-> B <-> C
     first.right = middle
     middle.left = first
     middle.right = last
@@ -74,14 +74,14 @@ if __name__ == "__main__":
     print(f"C's left neighbour is B: {last.left is middle}")
 
     # Make A left of C, with the middle variable still referring
-    # to the B object.  B will not be destroyed.
+    # to the B object, so A <-> C directly.  B will not be destroyed.
     middle.unlink()
 
     print(f"\nAfter unlinking B, A's right neighbour is C: {first.right is last}")
     print(f"After unlinking B, C's left neighbour is A: {last.left is first}")
     print(f"B still exists as a Node object: {middle.name == 'B'}")
 
-    # Restore the nodes to A - B - C
+    # Restore the nodes to A <-> B <-> C
     middle.relink()
 
     print(f"\nAfter restoring B, A's right neighbour is B: {first.right is middle}")
