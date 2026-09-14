@@ -47,6 +47,16 @@ class Node:
         self.up: Node = self
         self.down: Node = self
 
+    def link_right(self, neighbour: "Node") -> None:
+        """Link this node and another node together horizontally."""
+        self.right = neighbour
+        neighbour.left = self
+
+    def link_down(self, neighbour: "Node") -> None:
+        """Link this node and another node together vertically."""
+        self.down = neighbour
+        neighbour.up = self
+
 
 if __name__ == "__main__":
     print("\n=== DEMONSTRATION: HORIZONTAL CIRCULAR LINKS ===")
@@ -55,14 +65,11 @@ if __name__ == "__main__":
     middle = Node("B")
     last = Node("C")
 
-    # Link A - B - C horizontally, then connect the ends so the row becomes
+    # Link A <-> B <-> C horizontally, then connect the ends so the row becomes
     # circular: A <-> B <-> C <-> A.
-    first.right = middle
-    middle.left = first
-    middle.right = last
-    last.left = middle
-    last.right = first
-    first.left = last
+    first.link_right(middle)
+    middle.link_right(last)
+    last.link_right(first)
 
     print(f"A's right neighbour is B: {first.right is middle}")
     print(f"B's right neighbour is C: {middle.right is last}")
@@ -75,14 +82,11 @@ if __name__ == "__main__":
     centre = Node("B")
     bottom = Node("C")
 
-    # Link A - B - C vertically, then connect the ends so the column becomes
+    # Link A <-> B <-> C vertically, then connect the ends so the column becomes
     # circular: A <-> B <-> C <-> A.
-    top.down = centre
-    centre.up = top
-    centre.down = bottom
-    bottom.up = centre
-    bottom.down = top
-    top.up = bottom
+    top.link_down(centre)
+    centre.link_down(bottom)
+    bottom.link_down(top)
 
     print(f"A's lower neighbour is B: {top.down is centre}")
     print(f"B's lower neighbour is C: {centre.down is bottom}")
