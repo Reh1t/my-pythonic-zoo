@@ -60,9 +60,9 @@ Follow the exhibits in this order:
    translates the original Exact Cover requirements and choices into the linked
    matrix representation that Dancing Links operates on.
 
-8. **Dancing Links** will combine the complete progression: Algorithm X searches
-   the Exact Cover matrix while cover and uncover modify its linked structure
-   reversibly.
+8. **[Dancing Links](./dancing_links/dancing_links_example.py)** combines the
+   complete progression: Algorithm X searches the Exact Cover matrix while
+   cover and uncover modify its linked structure reversibly.
 
 Each exhibit is intended to be understood before moving to the next. The later
 examples deliberately assume familiarity with the concepts introduced earlier
