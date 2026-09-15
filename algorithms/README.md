@@ -1,0 +1,111 @@
+# Algorithms
+
+This category explores algorithms by building the mental model behind them,
+not just presenting a finished implementation.
+
+The examples favour small, runnable demonstrations that expose the decisions,
+data structures, and transformations involved. Where an algorithm depends on
+less familiar foundations, those foundations may be taught as part of a
+deliberate progression before the complete algorithm is assembled.
+
+## Dancing Links
+
+### What is Dancing Links?
+
+Dancing Links (DLX) is Donald Knuth's technique for implementing Algorithm X,
+a backtracking algorithm for Exact Cover problems. It represents the problem as
+a circular, doubly linked matrix whose nodes can be temporarily removed and
+restored very efficiently as the search explores different possibilities.
+
+The name comes from those reversible link changes: as Algorithm X moves forward
+and backtracks, links disappear from and return to the active structure. The
+individual exhibits below explain each part of that mechanism in detail, so this
+README provides only the overview rather than repeating their teaching material.
+
+The first progression in this category explores Donald Knuth's Dancing Links
+(DLX) technique and the Algorithm X search it supports.
+
+Dancing Links can look surprisingly opaque when encountered as a finished
+implementation. This progression therefore separates the ideas that make it
+work, introducing each one before combining them.
+
+### Study Sequence
+
+Follow the exhibits in this order:
+
+1. **[Exact Cover](./dancing_links/exact_cover_example.py)** introduces the
+   problem: choose rows so every required column is covered exactly once.
+
+2. **[Algorithm X](./dancing_links/algorithm_x_example.py)** introduces the
+   recursive search and backtracking algorithm used to solve Exact Cover
+   problems.
+
+3. **[Linked Nodes](./dancing_links/linked_nodes_example.py)** demonstrates how
+   a node can be temporarily unlinked without being destroyed, then restored
+   using the references it retained.
+
+4. **[Circular Links](./dancing_links/circular_links_example.py)** removes the
+   special end cases of a linear chain by making horizontal and vertical links
+   wrap around.
+
+5. **[Toroidal Matrix](./dancing_links/toroidal_matrix_example.py)** combines
+   the horizontal and vertical circles so every node participates in both at
+   once.
+
+6. **[Cover and Uncover](./dancing_links/cover_uncover_example.py)** demonstrates
+   the reversible structural changes that allow a search to remove possibilities
+   temporarily and restore them during backtracking.
+
+7. **[Exact Cover Matrix](./dancing_links/exact_cover_matrix_example.py)**
+   translates the original Exact Cover requirements and choices into the linked
+   matrix representation that Dancing Links operates on.
+
+8. **Dancing Links** will combine the complete progression: Algorithm X searches
+   the Exact Cover matrix while cover and uncover modify its linked structure
+   reversibly.
+
+Each exhibit is intended to be understood before moving to the next. The later
+examples deliberately assume familiarity with the concepts introduced earlier
+rather than attempting to explain the entire technique again in every file.
+
+### Why are Exact Cover and Algorithm X in the Dancing Links folder?
+
+Exact Cover and Algorithm X are not themselves Dancing Links. Exact Cover is the
+problem being solved, while Algorithm X is the search algorithm. Both can be
+studied and implemented without DLX.
+
+These particular exhibits live in `dancing_links` because they were written as
+the opening stages of this teaching progression. Moving them elsewhere would
+separate the prerequisites from the sequence that depends on them.
+
+If the Algorithms category later develops broader treatments of Exact Cover or
+Algorithm X, those can exist independently. The versions here can remain focused
+on preparing the reader for Dancing Links.
+
+### Why do the examples repeat some code?
+
+The exhibits in this section form a teaching progression, not a production
+application split across modules. Each example is intentionally self-contained
+so it can be opened, run, and studied independently. Later exhibits therefore
+repeat some familiar classes and linking operations while adding the next
+concept, rather than importing their implementation from earlier teaching
+examples.
+
+Once you understand the complete progression, you may prefer to refactor the
+implementation into reusable components. That is a worthwhile next exercise:
+the individual responsibilities and their relationships should now be familiar
+enough to decide where the module boundaries belong.
+
+If you take that challenge on, consider opening an Issue and working on a
+branch, then contribute the result back as a separate, fully modularised example
+in its own sub-folder. The teaching progression can remain intact alongside it,
+giving visitors both a step-by-step explanation and an example of how the same
+design might be structured for reuse and maintenance.
+
+---
+
+| File | Last Updated | Maintainer |
+| :--- | :---: | ---: |
+| _algorithms/README.md_ | _15 September 2026_ | _lizc-au_ |
+
+---
