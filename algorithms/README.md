@@ -22,9 +22,6 @@ and backtracks, links disappear from and return to the active structure. The
 individual exhibits below explain each part of that mechanism in detail, so this
 README provides only the overview rather than repeating their teaching material.
 
-The first progression in this category explores Donald Knuth's Dancing Links
-(DLX) technique and the Algorithm X search it supports.
-
 Dancing Links can look surprisingly opaque when encountered as a finished
 implementation. This progression therefore separates the ideas that make it
 work, introducing each one before combining them.
@@ -101,6 +98,14 @@ branch, then contribute the result back as a separate, fully modularised example
 in its own sub-folder. The teaching progression can remain intact alongside it,
 giving visitors both a step-by-step explanation and an example of how the same
 design might be structured for reuse and maintenance.
+
+### Where this leads
+
+The small Exact Cover problem used throughout this study sequence keeps the
+mechanics visible while the technique is being learned. A future exhibit is
+planned to apply the completed Dancing Links implementation to a more substantial
+Sudoku or logic-puzzle problem, showing how a real constraint problem can first
+be translated into Exact Cover and then solved using Algorithm X with DLX.
 
 ---
 
