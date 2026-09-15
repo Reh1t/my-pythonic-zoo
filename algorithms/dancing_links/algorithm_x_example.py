@@ -99,6 +99,28 @@ if __name__ == "__main__":
 
     solutions = solve_exact_cover(COLUMNS, ROWS, [])
     for solution in solutions:
-        print(f"Exact cover found: {solution}")
+        print(f"    Exact cover found: {solution}")
+
+    print("\n=== SEARCH SUMMARY ===")
+    print(
+        """
+    Start with requirements: A B C D
+
+    Choose Row 1 (A B)
+        remaining requirements: C D
+        choose Row 2 (C D)
+        -> exact cover found
+
+    Backtrack and try another path:
+
+    Choose Row 3 (A C)
+        remaining requirements: B D
+        choose Row 4 (B D)
+        -> exact cover found
+
+    Algorithm X explores choices, reduces the remaining problem,
+    and backtracks to try alternatives.
+    """
+    )
 
     print()

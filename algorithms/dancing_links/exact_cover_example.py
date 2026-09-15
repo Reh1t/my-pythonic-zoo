@@ -51,12 +51,28 @@ if __name__ == "__main__":
     print("\n=== DEMONSTRATION: EXACT COVER ===")
 
     print(
-        "Rows 1 & 2 cover AB + CD -> exact cover = "
+        "    Rows 1 & 2 cover AB + CD -> exact cover = "
         f"{is_exact_cover([ROWS['Choice 1'], ROWS['Choice 2']])}"
     )
     print(
-        "Rows 1 & 3 cover AB + AC -> exact cover = "
+        "    Rows 1 & 3 cover AB + AC -> exact cover = "
         f"{is_exact_cover([ROWS['Choice 1'], ROWS['Choice 3']])}"
+    )
+
+    print("\n=== STRUCTURE SUMMARY ===")
+    print(
+        """
+            A   B   C   D
+    Row 1   1   1   .   .
+    Row 2   .   .   1   1
+    Row 3   1   .   1   .
+    Row 4   .   1   .   1
+
+    An exact cover selects rows so every column is covered exactly once.
+
+    Rows 1 + 2:  A B + C D  -> exact cover
+    Rows 1 + 3:  A B + A C  -> A repeated, D missing
+    """
     )
 
     print()

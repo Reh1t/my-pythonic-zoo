@@ -101,18 +101,38 @@ if __name__ == "__main__":
     bottom_right.link_down(top_right)
 
     print("\n=== DEMONSTRATION: COVER / UNCOVER ===")
-    print(f"\nBefore cover, A's right neighbour is B: {top_left.right is top_right}")
+    print(
+        f"\n    Before cover, A's right neighbour is B: {top_left.right is top_right}"
+    )
 
     top_right.unlink_horizontal()
 
-    print(f"\nAfter cover, A's right neighbour skips B: {top_left.right is top_left}")
-    print(f"B still remembers A on its left: {top_right.left is top_left}")
+    print(
+        f"\n    After cover, A's right neighbour skips B: {top_left.right is top_left}"
+    )
+    print(f"    B still remembers A on its left: {top_right.left is top_left}")
 
     top_right.relink_horizontal()
 
     print(
-        "\nAfter uncover, A's right neighbour is B again:"
+        "\n    After uncover, A's right neighbour is B again:"
         f" {top_left.right is top_right}"
+    )
+
+    print("\n=== STRUCTURE SUMMARY ===")
+    print(
+        """
+    Before cover:
+        A <-> B
+
+    After covering B:
+        A <-> A       B still remembers where it belongs
+
+    After uncovering B:
+        A <-> B
+
+    The original linked structure has been restored.
+    """
     )
 
     print()

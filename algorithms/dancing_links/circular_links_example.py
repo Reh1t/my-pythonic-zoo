@@ -71,10 +71,10 @@ if __name__ == "__main__":
     middle.link_right(last)
     last.link_right(first)
 
-    print(f"A's right neighbour is B: {first.right is middle}")
-    print(f"B's right neighbour is C: {middle.right is last}")
-    print(f"C's right neighbour wraps back to A: {last.right is first}")
-    print(f"A's left neighbour wraps back to C: {first.left is last}")
+    print(f"    A's right neighbour is B: {first.right is middle}")
+    print(f"    B's right neighbour is C: {middle.right is last}")
+    print(f"    C's right neighbour wraps back to A: {last.right is first}")
+    print(f"    A's left neighbour wraps back to C: {first.left is last}")
 
     print("\n=== DEMONSTRATION: VERTICAL CIRCULAR LINKS ===")
 
@@ -88,9 +88,30 @@ if __name__ == "__main__":
     centre.link_down(bottom)
     bottom.link_down(top)
 
-    print(f"A's lower neighbour is B: {top.down is centre}")
-    print(f"B's lower neighbour is C: {centre.down is bottom}")
-    print(f"C's lower neighbour wraps back to A: {bottom.down is top}")
-    print(f"A's upper neighbour wraps back to C: {top.up is bottom}")
+    print(f"    A's lower neighbour is B: {top.down is centre}")
+    print(f"    B's lower neighbour is C: {centre.down is bottom}")
+    print(f"    C's lower neighbour wraps back to A: {bottom.down is top}")
+    print(f"    A's upper neighbour wraps back to C: {top.up is bottom}")
+
+    print("\n=== STRUCTURE SUMMARY ===")
+    print(
+        """
+    Horizontal circle:
+        ┌─────────────┐
+        ↕             ↕
+        A <-> B <-> C
+        ↕             ↕
+        └─────────────┘
+
+    Vertical circle:
+        A
+        ↕
+        B
+        ↕
+        C
+        ↕
+        A
+    """
+    )
 
     print()

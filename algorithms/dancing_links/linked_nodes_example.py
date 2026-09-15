@@ -68,23 +68,37 @@ if __name__ == "__main__":
     last.left = middle
 
     print("\n=== DEMONSTRATION: DOUBLY LINKED NODES ===")
-    print(f"A's right neighbour is B: {first.right is middle}")
-    print(f"B's left neighbour is A: {middle.left is first}")
-    print(f"B's right neighbour is C: {middle.right is last}")
-    print(f"C's left neighbour is B: {last.left is middle}")
+    print(f"    A's right neighbour is B: {first.right is middle}")
+    print(f"    B's left neighbour is A: {middle.left is first}")
+    print(f"    B's right neighbour is C: {middle.right is last}")
+    print(f"    C's left neighbour is B: {last.left is middle}")
 
     # Make A left of C, with the middle variable still referring
     # to the B object, so A <-> C directly.  B will not be destroyed.
     middle.unlink()
 
-    print(f"\nAfter unlinking B, A's right neighbour is C: {first.right is last}")
-    print(f"After unlinking B, C's left neighbour is A: {last.left is first}")
-    print(f"B still exists as a Node object: {middle.name == 'B'}")
+    print(f"\n    After unlinking B, A's right neighbour is C: {first.right is last}")
+    print(f"    After unlinking B, C's left neighbour is A: {last.left is first}")
+    print(f"    B still exists as a Node object: {middle.name == 'B'}")
 
     # Restore the nodes to A <-> B <-> C
     middle.relink()
 
-    print(f"\nAfter restoring B, A's right neighbour is B: {first.right is middle}")
-    print(f"After restoring B, C's left neighbour is B: {last.left is middle}")
+    print(f"\n    After restoring B, A's right neighbour is B: {first.right is middle}")
+    print(f"    After restoring B, C's left neighbour is B: {last.left is middle}")
+
+    print("\n=== STRUCTURE SUMMARY ===")
+    print(
+        """
+    Original:
+        A <-> B <-> C
+
+    B unlinked:
+        A <------> C       B still exists
+
+    B restored:
+        A <-> B <-> C
+    """
+    )
 
     print()

@@ -66,13 +66,27 @@ if __name__ == "__main__":
 
     print("\n=== DEMONSTRATION: TOROIDAL MATRIX ===")
 
-    print(f"A right -> B: {top_left.right is top_right}")
-    print(f"B right wraps -> A: {top_right.right is top_left}")
+    print(f"    A right -> B: {top_left.right is top_right}")
+    print(f"    B right wraps -> A: {top_right.right is top_left}")
 
-    print(f"A down -> C: {top_left.down is bottom_left}")
-    print(f"C down wraps -> A: {bottom_left.down is top_left}")
+    print(f"    A down -> C: {top_left.down is bottom_left}")
+    print(f"    C down wraps -> A: {bottom_left.down is top_left}")
 
-    print(f"D left -> C: {bottom_right.left is bottom_left}")
-    print(f"D up -> B: {bottom_right.up is top_right}")
+    print(f"    D left -> C: {bottom_right.left is bottom_left}")
+    print(f"    D up -> B: {bottom_right.up is top_right}")
+
+    print("\n=== STRUCTURE SUMMARY ===")
+    print(
+        """
+    Each node now belongs to both a circular row and a circular column:
+
+        A <-> B
+        ↕     ↕
+        C <-> D
+
+    Horizontal links wrap left <-> right.
+    Vertical links wrap up <-> down.
+    """
+    )
 
     print()

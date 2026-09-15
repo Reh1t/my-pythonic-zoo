@@ -116,9 +116,9 @@ if __name__ == "__main__":
         add_row(headers, row_name, covered_columns)
 
     print("\n=== DEMONSTRATION: EXACT COVER MATRIX HEADERS ===")
-    print(f"A's right header is B: {headers['A'].right is headers['B']}")
-    print(f"D's right header wraps to A: {headers['D'].right is headers['A']}")
-    print(f"A's left header wraps to D: {headers['A'].left is headers['D']}")
+    print(f"    A's right header is B: {headers['A'].right is headers['B']}")
+    print(f"    D's right header wraps to A: {headers['D'].right is headers['A']}")
+    print(f"    A's left header wraps to D: {headers['A'].left is headers['D']}")
 
     first_a_node = headers["A"].down
 
@@ -130,10 +130,10 @@ if __name__ == "__main__":
     assert isinstance(second_a_node, DataNode)
 
     print("\n=== DEMONSTRATION: DATA NODES IN COLUMN A ===")
-    print(f"First node below A belongs to: {first_a_node.row_name}")
-    print(f"Second node below A belongs to: {second_a_node.row_name}")
+    print(f"    First node below A belongs to: {first_a_node.row_name}")
+    print(f"    Second node below A belongs to: {second_a_node.row_name}")
     print(
-        "Column A then wraps back to its header:"
+        "    Column A then wraps back to its header:"
         f" {headers['A'].down.down.down is headers['A']}"
     )
 
@@ -141,22 +141,27 @@ if __name__ == "__main__":
     assert isinstance(choice_1_a, DataNode)
 
     print("\n=== DEMONSTRATION: DATA NODES IN CHOICE 1 ===")
-    print(f"Choice 1 starts in column A: {choice_1_a.column is headers['A']}")
-    print(f"Moving right reaches column B: {choice_1_a.right.column is headers['B']}")
-    print(f"Moving right again wraps back to A: {choice_1_a.right.right is choice_1_a}")
+    print(f"    Choice 1 starts in column A: {choice_1_a.column is headers['A']}")
+    print(
+        f"    Moving right reaches column B: {choice_1_a.right.column is headers['B']}"
+    )
+    print(
+        "    Moving right again wraps back to A:"
+        f" {choice_1_a.right.right is choice_1_a}"
+    )
 
     print("\n=== LINKED MATRIX CREATED ===")
     print(
         """
-        A       B       C       D
-        ↕       ↕       ↕       ↕
-        1 ↔──── 1       2 ↔──── 2
-        ↕       ↕       ↕       ↕
-        3 ↔──────────── 3
-                4 ↔──────────── 4
-        ↕       ↕       ↕       ↕
-        wraps   wraps   wraps   wraps
-        """
+    A       B       C       D
+    ↕       ↕       ↕       ↕
+    1 ↔──── 1       2 ↔──── 2
+    ↕       ↕       ↕       ↕
+    3 ↔──────────── 3
+            4 ↔──────────── 4
+    ↕       ↕       ↕       ↕
+    wraps   wraps   wraps   wraps
+    """
     )
 
     print()
