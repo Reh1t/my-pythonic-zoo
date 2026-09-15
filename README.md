@@ -22,7 +22,6 @@ We are actively seeking contributions for the following interactive terminal vis
 * **[#5] [2D ASCII Maze Generator & Pathfinding Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/5)** - Real-time maze creation and pathfinding algorithm rendering.
 * **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** - Pure Python 3D-to-2D spatial transformation matrix engine.
 * **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** - Dynamic tree insertion/deletion with ASCII branch layouts.
-* **[#10] [Knuth DLX Exact Cover Solver](https://github.com/lizc-au/my-pythonic-zoo/issues/10)** - Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems (currently assigned to maintainer but you're welcome to collaborate or wow us with your contribution😊).
 * **[#12] [SQLite CRUD Execution Script](https://github.com/lizc-au/my-pythonic-zoo/issues/12)** - Transactional Create, Read, Update, and Delete module using parameterized queries.
 
 ---
@@ -92,6 +91,19 @@ Explore the mental models, characteristic idioms, common surprises, and language
 
 See the **[Pythonic Thinking Guide](./pythonic_thinking/README.md)** for the full conceptual roadmap and planned exhibits.
 
+### 🧩 [7. Algorithms & Data Structures](./algorithms/)
+
+Explore algorithms by building the mental models, data structures, and operations
+behind them before combining those pieces into complete implementations.
+
+* **[Dancing Links](./algorithms/dancing_links/)**: A structured study sequence
+  progressing from Exact Cover and Algorithm X through linked nodes, circular
+  structures, toroidal matrices, and reversible cover/uncover operations before
+  combining them into a complete Dancing Links implementation.
+
+See the **[Algorithms Guide](./algorithms/README.md)** for the full study sequence
+and detailed teaching progression.
+
 ---
 
 ## 🧪 Code Quality
@@ -135,7 +147,6 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 
 ### 🧩 Algorithms & Data Structures
 * **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** - Dynamic tree insertion/deletion with ASCII branch layouts.
-* **[#10] [Knuth DLX Exact Cover Solver](https://github.com/lizc-au/my-pythonic-zoo/issues/10)** - Production-ready implementation of Knuth's Dancing Links (Algorithm X) for matrix cover problems.
 * **Graph Network & Traversal Visualizer** - Terminal visualizer showing graph structures and shortest paths (Dijkstra/A*).
 
 ### ⚛️ Physics & Dimensional Simulations
@@ -173,6 +184,6 @@ Thanks also to members of the wider [Reddit](https://www.reddit.com/) Python com
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _13 September 2026_ | _lizc-au_ |
+| _README.md_ | _15 September 2026_ | _lizc-au_ |
 
 ---
