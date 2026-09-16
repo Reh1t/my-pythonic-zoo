@@ -22,7 +22,6 @@ We are actively seeking contributions for the following interactive terminal vis
 * **[#5] [2D ASCII Maze Generator & Pathfinding Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/5)** - Real-time maze creation and pathfinding algorithm rendering.
 * **[#6] [3D Wireframe Cube Rotation Engine](https://github.com/lizc-au/my-pythonic-zoo/issues/6)** - Pure Python 3D-to-2D spatial transformation matrix engine.
 * **[#7] [Interactive Binary Search Tree (BST) Visualizer](https://github.com/lizc-au/my-pythonic-zoo/issues/7)** - Dynamic tree insertion/deletion with ASCII branch layouts.
-* **[#12] [SQLite CRUD Execution Script](https://github.com/lizc-au/my-pythonic-zoo/issues/12)** - Transactional Create, Read, Update, and Delete module using parameterized queries.
 
 ---
 *Want to tackle one? Drop a comment on the issue to claim it!*
@@ -55,6 +54,7 @@ Authentication mechanisms and secure input architecture.
 ### 💾 [3. Database Basics](./database_basics/)
 System durability, context safety, and resource management.
 * **`connection_tester.py`**: Safe SQLite execution environments wrapping queries in strict `try-except-finally` blocks to guarantee resource closure and prevent server memory leaks.
+* **`sqlite_crud.py`**: Transaction-safe SQLite Create, Read, Update, and Delete operations using context managers, parameterized queries, and dictionary-like query results.
 
 ### 🖥️ [4. Native GUI](./native_gui/)
 Cross-platform graphical user interface examples using Python's built-in Tkinter toolkit.
@@ -133,9 +133,6 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 * **[#3] [Australian Postcode API Lookup](https://github.com/lizc-au/my-pythonic-zoo/issues/3)** - Terminal utility fetching suburb/postcode data via public API.
 * **HTTP Status Checker** - Lightweight URL health monitor and status code logger.
 
-### 💾 Database Operations (CRUD)
-* **[#12] [SQLite CRUD Execution Script](https://github.com/lizc-au/my-pythonic-zoo/issues/12)** - Transactional Create, Read, Update, and Delete module using parameterized queries.
-
 ### ⚙️ System Automation & DevOps
 * **File System Cleanup & Archiver** - Directory cleanup utility that compresses old files and organizes logs by date.
 * **Environment Checker** - Simple diagnostic script verifying Python version, active virtualenv, and installed system packages.
@@ -164,11 +161,18 @@ This zoo is an active, evolving cookbook. We are continuously curating and deplo
 
 ---
 
+## AI Assistance Disclosure
+
+This project is developed with interactive assistance from ChatGPT for pair programming, code review, documentation, testing, and exploring Python concepts. This repository is not autonomously developed or maintained by AI agents. AI is used collaboratively, with human review, decision-making, and a fair amount of blood, sweat and tears throughout. All design decisions, code changes, and contributions are reviewed, tested, and ultimately maintained by @lizc-au.
+
+---
+
 ## 🤝 Contributors
 
-Special thanks to everyone working on or building exhibits for the Pythonic Zoo, especially our first and so far only contributor since our creation in August 2026 - an eager AI agent created by the developer who snapped up and completed with honours our first task set ... within a matter of minutes!! We welcome all-comers, humans and AI alike, with eager anticipation and awe for the future of our project ... and mankind!
+Special thanks to everyone who has contributed to the Pythonic Zoo. Contributions, ideas, reviews, and improvements that help make the Zoo a better learning resource are greatly appreciated.
 
 * [@HeaTTap](https://github.com/HeaTTap) - Australian Phone Number Sanitiser ([#2](https://github.com/lizc-au/my-pythonic-zoo/pull/2))
+* [@alejandrotg-code](https://github.com/alejandrotg-code) - Transactional SQLite CRUD Execution Script ([#48](https://github.com/lizc-au/my-pythonic-zoo/pull/48))
 
 ---
 
