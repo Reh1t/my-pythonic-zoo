@@ -188,6 +188,6 @@ Thanks also to members of the wider [Reddit](https://www.reddit.com/) Python com
 
 | File | Last Updated | Maintainer |
 | :--- | :---: | ---: |
-| _README.md_ | _15 September 2026_ | _lizc-au_ |
+| _README.md_ | _17 September 2026_ | _lizc-au_ |
 
 ---
