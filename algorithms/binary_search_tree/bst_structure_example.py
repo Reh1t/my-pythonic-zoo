@@ -4,22 +4,24 @@ bst_structure_example.py
 Introduce the underlying structure of a Binary Search Tree (BST) and its core
 ordering rule, without hiding the mechanics behind automated algorithms.
 
-A Binary Search Tree is a data structure used to store information in a way that
-makes searching incredibly fast. Real-world applications of the concepts behind
-BSTs include:
-- Database indexing (finding a specific row out of millions instantly)
-- Fast dictionary lookups and autocomplete systems
-- Maintaining a continuously sorted stream of incoming data
+While an ordinary Binary Search Tree is primarily a foundational teaching
+tool (because it can become unbalanced and lose its speed advantage), its
+concepts form the core basis for more advanced, self-balancing trees (like
+AVL or Red-Black trees). Those advanced trees are used in real-world
+operating system memory management and in-memory database engines.
 
-Before learning how a BST automatically inserts, searches, or deletes data, a 
+Before learning how a BST automatically inserts, searches, or deletes data, a
 learner must first understand two things:
 1. How individual pieces of data (``Node`` objects) are linked together.
 2. The mathematical rule (the Invariant) that dictates where a ``Node`` belongs.
 
-In this teaching progression, we will assume our BST does not allow duplicate
-values. This is a common simplification that makes learning the search and
-deletion algorithms much easier. If a duplicate arrives, it is simply ignored.
+Because this module focuses only on the manual structure, we do not need
+to handle duplicate values yet. When we introduce automatic insertion
+algorithms in later modules, those examples will handle duplicates by
+simply ignoring them.
 """
+
+from __future__ import annotations
 
 
 class Node:
@@ -28,6 +30,10 @@ class Node:
 
     A tree is built by linking these nodes together. Each node holds its own
     value and maintains references (pointers) to its left and right children.
+
+    The ``left`` and ``right`` attributes are object references. To understand
+    more deeply how Python handles names and objects in memory, see the exhibit
+    at ``pythonic_thinking/mental_model/names_and_objects_example.py``.
     """
 
     def __init__(self, value: int) -> None:
@@ -36,8 +42,12 @@ class Node:
 
         When a node is first created, it has no children. In Python, we use the
         special keyword ``None`` to indicate the absence of a value. The type hint
-        ``'Node' | None`` tells Python that this attribute will either point to 
+        ``Node | None`` tells Python that this attribute will either point to
         another ``Node`` object, or it will be ``None`` (a dead end).
+
+        Note that type hints like ``Node | None`` are not enforced by Python at
+        runtime. They exist to help human readers and static-analysis tools. For
+        more on this, see ``pythonic_thinking/type_system/type_annotations_example.py``.
         """
         self.value = value
         self.left: Node | None = None
@@ -115,9 +125,9 @@ def demonstrate_ordering_rule() -> None:
         "The mental model is now complete: we have nodes linked together,\n"
         "and they are arranged according to a strict mathematical rule.\n\n"
         "A Note on Duplicates:\n"
-        "What happens if we try to add another 10?\n"
-        "To keep our learning model simple, our BST will reject duplicate\n"
-        "values. If a duplicate arrives, it will simply be ignored.\n"
+        "Because this module focuses only on structure, we don't handle\n"
+        "duplicates yet. When we introduce insertion algorithms later,\n"
+        "those examples will handle duplicates by simply ignoring them.\n"
     )
 
     print("Let's trace the objects to prove the structure exists in memory:")
