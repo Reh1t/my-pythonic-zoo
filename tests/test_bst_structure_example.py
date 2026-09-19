@@ -77,15 +77,7 @@ def test_manual_bst_satisfies_ordering_comparisons() -> None:
     assert root.left.left.value < root.left.value
     assert root.left.right.value > root.left.value
 
-    # Verify the duplicate decision (values are unique)
-    # As documented, insertion isn't implemented yet, but we verify
-    # our manual tree respects the decision that duplicates are not used.
-    tree_values = {
-        root.value,
-        root.left.value,
-        root.right.value,
-        root.left.left.value,
-        root.left.right.value,
-    }
-    expected_node_count = 5
-    assert len(tree_values) == expected_node_count
+    # Directly compare 5 and 15 with the root value of 20 to prove the
+    # full subtree invariant.
+    assert root.left.left.value < expected_root
+    assert root.left.right.value < expected_root

@@ -42,8 +42,9 @@ class Node:
 
         When a node is first created, it has no children. In Python, we use the
         special keyword ``None`` to indicate the absence of a value. The type hint
-        ``Node | None`` tells Python that this attribute will either point to
-        another ``Node`` object, or it will be ``None`` (a dead end).
+        ``Node | None`` indicates the intended type to readers and static-analysis
+        tools. It means this attribute will either point to another ``Node`` object,
+        or it will be ``None`` (a dead end).
 
         Note that type hints like ``Node | None`` are not enforced by Python at
         runtime. They exist to help human readers and static-analysis tools. For
@@ -87,8 +88,8 @@ def demonstrate_ordering_rule() -> None:
     Explain and manually apply the Binary Search Tree Ordering Rule.
 
     The Rule (Invariant):
-    - Any node to the left of a parent MUST be strictly smaller.
-    - Any node to the right of a parent MUST be strictly larger.
+    - Every value in a node's left subtree must be smaller than that node.
+    - Every value in its right subtree must be larger.
     """
     print("=== Demonstration 2: The Ordering Rule ===")
     print("Building a valid BST manually to satisfy the ordering rule...")
@@ -132,7 +133,7 @@ def demonstrate_ordering_rule() -> None:
 
     print("Let's trace the objects to prove the structure exists in memory:")
 
-    # Python type hinting requires us to prove these links aren't 'None'
+    # The static type checker requires us to prove these links aren't 'None'
     # before we access them. We use 'assert' to guarantee they exist.
     assert root.left is not None
     assert root.left.left is not None
