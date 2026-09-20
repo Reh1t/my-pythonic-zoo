@@ -133,8 +133,9 @@ def demonstrate_ordering_rule() -> None:
 
     print("Let's trace the objects to prove the structure exists in memory:")
 
-    # The static type checker requires us to prove these links aren't 'None'
-    # before we access them. We use 'assert' to guarantee they exist.
+    # We must prove these links aren't 'None' before accessing them.
+    # These assertions confirm the expected links at runtime and narrow
+    # their types for the static type checker.
     assert root.left is not None
     assert root.left.left is not None
     assert root.left.right is not None
